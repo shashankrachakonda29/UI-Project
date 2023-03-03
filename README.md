@@ -4,6 +4,6 @@
 Software Requirements:
 HTML
 Java Script
-MongoDB
+MongoDB 4.14
 NodeJS
 ExpressJS
