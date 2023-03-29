@@ -1,0 +1,38 @@
+<%- include('layout/header')%>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Add users</h1>
+            <div class="container-fluid">
+                <div>
+                    <h1 class="text-light">Registration form</h1>
+                    <form class="form" method="post"action="/update/<%=user.id%>" >
+                        <dl class="text-center">
+                            <dt for="id">Id</dt>
+                            <dd><input type="number" name="id" value="<%=user.id%>" id="id"></dd>
+                            <dt for="Fname">Name:</dt>
+                            <dd><input type="text" name="name" value="<%=user.name%>" id="name" autofocus></dd><br>
+                            <dt for="lname">Last Name:</dt>
+                            <dd><input type="text" id="lname" name="lname" value="<%=user.lname%>"></dd><br>
+                            <dt for="email">Email:</dt>
+                            <dd><input type="email" name="email" value="<%=user.email%>" id="email"></dd><br>
+                            <dt for="pass">Password:</dt>
+                            <dd><input type="password" name="pass" value="<%=user.password%>" id="pass"></dd><br>
+                            <dt for="no">Phone Number:</dt>
+                            <dd><input type="number" maxlength="10" value="<%=user.no%>" min="10" name="no" id="no"></dd><br>
+                            <dt for="gender">Gender:</dt>
+                            <dd>
+                                <input type="radio" name="gender" value="<%=user.gender%>" checked id="gender">Male
+                                <input type="radio" name="gender" value="<%=user.gender%>" id="gender">Female<br>
+                            </dd>
+                            <dt for="age">Age:</dt>
+                            <dd><input type="number" name="age" value="<%=user.age%>" id="age"></dd><br>
+                            <button class="btn btn-primary">Submit</button>
+                        </dl>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('layout/footer')%>

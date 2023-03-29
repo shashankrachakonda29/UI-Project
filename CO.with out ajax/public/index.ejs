@@ -1,0 +1,44 @@
+<%- include('layout/header')%>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+<% if(user.length>0){%>
+            <table class="table table-responsive table-hover">
+                  <tr class="table-dark">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone No</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">password</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                    <% for (var i=0 ;i<user.length;i++){ %>
+                  <tr>
+                    <td><%= user[i].id%></td>
+                    <td><%=user[i].name%></td>
+                    <td><%=user[i].lname%></td>
+                    <td><%=user[i].email%></td>
+                    <td><%=user[i].no%></td>
+                    <td><%=user[i].gender%></td>
+                    <td><%=user[i].password%></td>
+                    <td><%=user[i].age%></td>
+                    <td>
+                        <a href="/edit/<%= user[i].id %>"><button class="btn btn-primary">Edit</button></a>
+                    </td>
+                    <td><a href="/delete/<%=user[i].id%>"><button class="btn btn-danger">Delete</button></a></td>
+                    <td></td>
+                  </tr>
+                  
+                  <% }%>
+            </table>
+            <%}else{%>
+            no Record Found
+        <% } %>
+        </div>
+    </div>
+</div>
+<%- include('layout/footer')%>
