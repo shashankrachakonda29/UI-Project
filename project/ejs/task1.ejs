@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>task </title> 
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
+  <link rel="stylesheet" href="framework/apps/fbpartners/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900|Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet">  
+  <link rel="stylesheet" href="framework/apps/fbpartners/css/style.css">
+  <link href="framework/apps/fbpartners/css/select2.min.css" rel="stylesheet" />
+
+  <script src="framework/apps/fbpartners/js/News_config.js"></script>
+  <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script>
+  
+  
+    <style>
+    /* .nebgclore {
+        height: 895px;
+        
+    } */
+    .nebgclore {height: 1090px;    padding: 15px !important;}
+    .newbgcolo {height: 1090px;}
+    select#TagName {width: 100%;}
+    @media only screen and (max-width: 1500px) {
+    .form-group select{
+        width:95% !important;
+    }
+    .form-group textarea{
+        width:95% !important;
+    }
+    }
+    </style>
+</head>
+<body>
+<%- include .//partials/header %>
+		
+		
+<div class="wrapper">
+ <main class="l-main bg-color">
+    <div class="content-wrapper content-wrapper--with-bg"> 
+			<%- include .//partials/leftmenu %> 
+            <form class="form">
+                <div class="row allmanpads">
+                    <div class="col-lg-12 col-md-12 col-xs-12 padmarse stepsbgs">
+                        <h1>Task <span id="editinputs"> <i class="fa fa-pencil penslie"></i></span></h1>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Name" class="cols-sm-2 control-label">Name</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                             
+                            <input type="text" class="form-control" data-valid="required" name="Name" id="Name"  placeholder="Enter Name"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="type" class="cols-sm-2 control-label">type</label>
+                    <div class="cols-sm-10">
+                        <div class="">
+                            <select  class="form-control" data-valid="required" name="type" id="type"  placeholder="type">
+                                <option value=""></option>
+                                <option value="task">task</option>
+                                <option value="question">Question</option>
+                                <option value="bank">bank</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sdate" class="cols-sm-2 control-label">Start-Date</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group"> 
+                            <input type="date" class="form-control" data-valid="required" name="sdate" id="sdate" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edate" class="cols-sm-2 control-label">End-Date</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group"> 
+                            <input type="date" class="form-control" data-valid="required" name="edate" id="edate" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="cols-sm-2 control-label">Description</label>
+                    <div class="cols-sm-10">
+                        <div class="">
+                            <textarea type="text" class="form-control"  name="description" id="description"  placeholder="Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="owner" class="cols-sm-2 control-label">Owner</label>
+                    <div class="cols-sm-10">
+                        <div class="">	 
+                            <select class="form-control" name="owner"  data-valid='required'  id="owner" placeholder="Contact Person">
+                                    <option>Owner-1</option> 
+                                    <option>Owner-2</option> 
+                                    <option>Owner-3</option> 
+                            </select>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer col-lg-12" style="border:none !important; padding-bottom: 0 !important;padding-right: 0 !important;">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success cancelbtn" onclick="Createstask();" data-original-title="" title="">Save</button>
+                        <a href="tasktable.ejs" type="submit" class="btn btn-warning savebtn"  >Cancel</a>	
+                        <button type="submit" class="btn btn-danger savebtn" onclick="deletestask();">Delete</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 adddcomnde nebgclore ad-prdct-ng">
+                    <div class="col-md-12 listcontras">
+                        <div class="newdesyjd">
+                            <div class="col-md-12 padsmars">
+                                <div class="col-md-6 padsmars">
+                                    <h3 class="dfrwes">Documents</h3>
+                                </div>
+                                <div class="col-md-6 padsmars jsdfdfff">
+                                    <a data-toggle="modal" data-target="#myModal" style="cursor: pointer;"><img src="static/images/fbpartners/plus.svg" class="addplusid">Add</a>
+                                </div>
+                                <div class="scrollbar" id="style-3">
+                                    <div class="force-overflow">
+                                        <table class="table table-hover fiejsdcve">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"> Name</th>
+                                                    <th scope="col" class="downloaddocss">Download</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                
+                                    <div id="myModal" class="modal fade emicalculators in" role="dialog"
+                                        style="padding-left: 0px;">
+                                        <div class="modal-dialog">
+            
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="panel-body">
+                                                    <div class="panel with-nav-tabs panel-primary">
+                                                        <div class="panel-body">
+                                                            <div class="tab-content">
+                                                                <div class="" id="">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title formes">
+                                                                            upload documents </h4>
+                                                                        <p class="formesr"
+                                                                            style="margin-bottom: 0 !important;">
+                                                                            </p>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="row allmanpads">
+                                                                            <div class="col-lg-12 padmarse">
+            
+                                                                                <div class="form-group">
+                                                                                    <label for="Email"
+                                                                                        class="cols-sm-2 control-label fbaform1">Document
+                                                                                        Name</label>
+                                                                                    <div class="cols-sm-10">
+                                                                                        <div
+                                                                                            class="input-group">
+            
+                                                                                            <input
+                                                                                                type="text"
+                                                                                                class="form-control fbtxtcaption documentupload"
+                                                                                                name="Document Name"
+                                                                                                id="documentname"
+                                                                                                placeholder="Enter Document Name">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+            
+                                                                                <div
+                                                                                    class="form-group uploadsec">
+                                                                                    <label
+                                                                                        for="comment">upload
+                                                                                        document</label>
+                                                                                    <div rows="10" cols="50"
+                                                                                        class="imgareas uploadtype">
+                                                                                        <span
+                                                                                            class="imgareas"><i
+                                                                                                class="fa fa-arrow-circle-o-up fa-3x">
+                                                                                            </i><br />Drop
+                                                                                            Files (or)Click
+                                                                                            here</span>
+            
+                                                                                    </div>
+                                                                                </div>
+            
+                                                                                <div class="modal-footer col-lg-12"
+                                                                                    style="border:none !important; padding-bottom: 0 !important;">
+                                                                                    <div class="form-group">
+                                                                                        <button
+                                                                                            type="submit"
+                                                                                            class="btn btn-success cancelbtn page documentupload"
+                                                                                            data-original-title="" data-page="product" onclick="createstaskdocument();"
+                                                                                            title="">Save</button>
+                                                                                        <button
+                                                                                            type="submit"
+                                                                                            data-dismiss="modal"
+                                                                                            class="btn btn-warning savebtn documentupload">Cancel
+                                                                                        </button></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="control-sidebar-bg"></div>
+ 
+    </div>
+    
+</main>
+<div class="clear"></div>
+
+   
+ 
+<script src="../framework/apps/fbpartners/js/jquery-2.2.3.min.js"></script>
+<script src="../framework/apps/fbpartners/js/bootstrap.min.js"></script>
+<script src="../framework/apps/fbpartners/js/functions.js"></script>
+<script src="framework/js/dropzone.min.js"></script>
+<script src="/public/popups/imagemanagement.js"></script>
+<script src="/public/popups/documentmanagement.js"></script>
+<script src="../framework/apps/fbpartners/js/taskserver.js"></script>
+<script src="../framework/apps/fbpartners/js/taskUi.js"></script>
+<script src="../framework/apps/fbpartners/js/select2.min.js"></script>
+
+<script src="../framework/apps/fbpartners/js/simplebar.js"></script>
+
+<script>
+    // Function to change webpage background color
+    bindstask();
+</script>
+<!-- <script>
+	CKEDITOR.replace( 'editor2', {
+		height: 250,
+		extraPlugins: 'divarea'
+	} ); -->
+</script>
+</body>
+</html>

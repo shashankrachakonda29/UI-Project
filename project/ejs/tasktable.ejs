@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>task - info</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" href="framework/apps/fbpartners/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900|Source+Sans+Pro:200,300,400,600,700,900"
+		rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="framework/apps/fbpartners/css/style.css">
+	<style>
+	/* div { 
+			text-transform: capitalize;
+		} */
+		.list-view{
+			display: none;
+		}
+
+		.modal-header {
+			border: none !important;
+			background: #f7f7f7;
+			padding: 15px;
+			padding-left: 30px;
+		}
+
+		.uploadsec div.csvareas {
+			border: #e6ecef solid 1.5px;
+			padding: 40px 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.listitem_company h4{
+	line-height: 15px;
+    font-size: 15px !important;
+    color: #2c2e53;
+    letter-spacing: 0.16px;
+    margin: 2px 0 0 0;
+    font-weight: 600;
+	}
+	.listitem_company span {
+	font-size: 12px;
+	}
+
+	</style>
+
+
+</head>
+
+<body>
+	<%- include .//partials/header %>
+	<div class="wrapper">
+		<main class="l-main bg-color">
+			<div class="content-wrapper content-wrapper--with-bg">
+
+
+				<%- include .//partials/leftmenu %>
+				<div class="content-wrapper">
+					<section class="content-header rightmains">
+						<!-- <div class="row jduuuu">
+							<div class="col-lg-12 allbgcloes">
+								<div class="col-md-4 padsmars">
+									<div class="oneicow" data-bg="" data-fixedtop=""><img
+											src="static/images/fbpartners/companies.svg"></div>
+									<div class="uiooow">
+										<h1>task</h1>
+									</div>
+								</div>
+								<div class="col-md-8 padsmars">
+									<div class="search_right">
+									   <div class="keysearvhme">
+										</div>
+										 -<div class="taskfilters">
+											<ul class="nav navbar-nav">
+											<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+											aria-expanded="true" data-original-title="" title="Filter"><i
+											class="fa fa-glass filtericos"></i> Filter
+											</a>
+											<ul class="dropdown-menu dropdown-cart notificationsc" role="menu">
+											<li><a onclick="dealerbyfilter('ALL')"><img src="static/images/fbpartners/add-company.svg"> ALL Dealers</a></li>
+											<li><a onclick="dealerbyfilter('ispep')"><img src="static/images/fbpartners/box (3).svg">Is Partner</a></li>
+											<li><a onclick="dealerbyfilter('issinglelead')"><img src="static/images/fbpartners/goal (1).svg">Refered Single Deal</a></li>
+											</ul>
+											</li>
+											</ul>
+																		   </div>-
+										<div class="buttons filter-buttons">
+											<button class="list-view "><i class="fa fa-bars" aria-hidden="true"></i></button>
+											<button class="grid-view on"><i class="fa fa-th-large" aria-hidden="true"></i></button>
+										 </div>
+								    	<ul class="addworksw">
+										<li><a href="task1" style="cursor: pointer;">
+											Task</a></li>
+									   </ul>
+							    	</div>
+								</div>
+
+							</div>
+						</div>
+						<hr class="lodnborder">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-xs-12">
+								<div class="row allmanpads copnyboxb">
+									
+									<div class="col-lg-12 col-md-12 col-xs-12 padsmars"> -->
+									<table class="table table-borderless">
+										<thead>
+											<tr>
+												<th>name</th>
+												<th>type</th>
+												<th>Start Date</th>
+												<th>End Date</th>
+												<th>Description</th>
+												<th>Owner</th>
+											</tr>
+										</thead>
+										<tbody>
+
+										</tbody>
+									</table>	
+                                      
+                                     <!-- <div class="grid_wrapper listt companydeatles">
+									
+																				
+									</div> -->
+
+									<!-- </div>
+								</div>
+							</div>
+						</div> -->
+					</section>
+				</div>
+				<div class="control-sidebar-bg"></div>
+			</div>
+		</main>
+		<div class="clear"></div>
+	</div>
+	<%- include .//partials/footer %>
+
+
+	<script src="framework/apps/fbpartners/js/jquery-2.2.3.min.js"></script>
+	<script src="framework/apps/fbpartners/js/bootstrap.min.js"></script>
+	<script src="framework/apps/fbpartners/js/functions.js"></script>
+	<script src="framework/js/dropzone.min.js"></script>
+	<script src="./public/popups/documentmanagement.js"></script>
+	<script src="../framework/apps/fbpartners/js/taskserver.js"></script>
+	<script src="../framework/apps/fbpartners/js/taskUi.js"></script>
+	<!-- <script src="../framework/apps/fbpartners/js/fbpartnerserve.js"></script>
+	<script src="../framework/apps/fbpartners/js/fbpartnersUI.js"></script> -->
+	<script>
+		getstask();
+ 	</script>
+	
+</body>
+
+</html>
